@@ -20,19 +20,46 @@ JSX → Sintaxis para combinar JavaScript y HTML.
 
 CSS → Estilos dinámicos y condicionales.
 
-📂 Estructura del Proyecto
-Código
 src/
  ├── components/
  │    ├── CustomHeader.jsx   # Encabezado con buscador
  │    ├── CardGrid.jsx       # Contenedor que renderiza tarjetas con .map()
  │    └── ItemCard.jsx       # Tarjeta individual con interactividad
- ├── data.js                 # Mock Data del catálogo
+ ├── data.js                 # Mock Data del catálogo (35 ítems)
  ├── App.jsx                 # Orquestador principal
  ├── main.jsx                # Punto de entrada
  └── styles.css              # Estilos globales y condicionales
-⚙️ Funcionalidades
+
+
+ 🔄 Flujo de Datos
+
+data.js (Mock Data)
+        │
+        ▼
+App.jsx (Orquestador principal)
+        │
+        ├── CustomHeader.jsx (Encabezado con buscador)
+        │         └── onSearch → actualiza estado con useState
+        │
+        └── CardGrid.jsx (Contenedor)
+                  └── .map() sobre catálogo filtrado
+                          ▼
+                  ItemCard.jsx (Tarjeta individual)
+                          ├── Muestra título, categoría, año
+                          ├── Estilos condicionales (destacado/favorito)
+                          └── Botón → handleFavorito con useState
+
+ ⚙️ Funcionalidades
 Buscador en tiempo real: filtra por título o categoría.
+
+Favoritos dinámicos: cada tarjeta puede marcarse como favorita y cambia de estilo.
+
+Estilos destacados: borde dorado para ítems con destacado: true.
+
+Animaciones sutiles: efecto hover con transform: scale(1.05) en las tarjetas.
+
+Pantalla de carga: spinner animado con mensaje “Cargando catálogo…” antes de renderizar.                         
+
 
 Favoritos dinámicos: cada tarjeta puede marcarse como favorita con estilos condicionales.
 

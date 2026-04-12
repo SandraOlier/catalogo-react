@@ -7,10 +7,10 @@ export default function CustomHeader({ onSearch }) {
     <header className="header">
       <h1>🎮 Catálogo Interactivo</h1>
       <h2>React + Vite + JSX</h2>
-      <input 
-        type="text" 
-        placeholder="Buscar por título o categoría..." 
-        onChange={handleInputChange} 
+      <input
+        type="text"
+        placeholder="Buscar por título o categoría..."
+        onChange={handleInputChange}
         className="search-input"
       />
     </header>
