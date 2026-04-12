@@ -1,6 +1,11 @@
+
 🎮 Catálogo Interactivo en React
-📌 Descripción
+
+📌 Descripción:
+
 Aplicación desarrollada con Vite + React + JSX que muestra un catálogo interactivo de videojuegos y animes.
+
+
 El proyecto demuestra dominio en:
 
 Creación y reutilización de componentes.
@@ -10,6 +15,7 @@ Flujo de datos mediante Props.
 Manejo de estado con useState.
 
 Renderizado condicional y estilos dinámicos.
+
 
 🚀 Tecnologías Utilizadas
 Vite → Inicialización rápida del proyecto.
@@ -49,7 +55,9 @@ App.jsx (Orquestador principal)
                           ├── Estilos condicionales (destacado/favorito)
                           └── Botón → handleFavorito con useState
 
+
  ⚙️ Funcionalidades
+
 Buscador en tiempo real: filtra por título o categoría.
 
 Favoritos dinámicos: cada tarjeta puede marcarse como favorita y cambia de estilo.
@@ -67,14 +75,20 @@ Estilos destacados: borde dorado para ítems destacados desde el mock data.
 
 Animaciones sutiles: hover con transform: scale(1.05) para dar vida al catálogo.
 
+
+
 🧩 Componentes
+
 CustomHeader: título, subtítulo y buscador interactivo.
 
 CardGrid: recibe el arreglo filtrado y renderiza las tarjetas con .map().
 
 ItemCard: muestra la información individual y permite marcar favoritos.
 
+
+
 🎨 Estilos Dinámicos
+
 destacado: borde dorado y fondo especial.
 
 favorito: borde rojo y fondo rosado.

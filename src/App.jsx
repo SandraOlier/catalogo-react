@@ -1,15 +1,13 @@
-
 import { useState, useEffect } from "react";
-import { catalogo } from "./data"; // ✅ corregido: apunta a src/data.js
+import { catalogo } from "./components/data";
 import CustomHeader from "./components/CustomHeader";
 import CardGrid from "./components/CardGrid";
 import "./styles.css";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [loading, setLoading] = useState(true); // ✅ estado de carga
+  const [loading, setLoading] = useState(true);
 
-  // Simula un pequeño tiempo de carga
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(timer);
@@ -44,3 +42,4 @@ function App() {
 }
 
 export default App;
+
