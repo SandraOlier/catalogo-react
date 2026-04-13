@@ -1,62 +1,64 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" width="32" height="32">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 90" width="32" height="32">
   <defs>
     <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#2a2a2a" />
-      <stop offset="100%" stop-color="#111" />
+      <stop offset="0%" stop-color="#333" />
+      <stop offset="100%" stop-color="#141414" />
     </linearGradient>
-    <radialGradient id="glow" cx="40%" cy="30%" r="70%">
+    <radialGradient id="shine" cx="45%" cy="28%" r="55%">
       <stop offset="0%" stop-color="#ffffff" stop-opacity="0.18" />
       <stop offset="100%" stop-color="#000000" stop-opacity="0" />
     </radialGradient>
     <style>
-      .body { fill: url(#bodyGrad); stroke: #111; stroke-width: 0.8; }
-      .glow { fill: url(#glow); }
-      .stick { fill: #404040; stroke: #777; stroke-width: 0.8; }
-      .stick-center { fill: #111; }
-      .button { stroke: #111; stroke-width: 0.7; }
-      .triangle { fill: #3ee97c; }
-      .circle { fill: #ff596e; }
-      .cross { fill: #5d78ff; }
-      .square { fill: #ffdc52; }
-      .dpad { fill: #4a4a4a; }
-      .trigger { fill: #161616; stroke: #111; stroke-width: 0.6; }
+      .body { fill: url(#bodyGrad); stroke: #111; stroke-width: 1; }
+      .shine { fill: url(#shine); }
+      .stick-ring { fill: #444; stroke: #666; stroke-width: 1; }
+      .stick-center { fill: #0f0f0f; }
+      .dpad { fill: #4f4f4f; }
+      .face-a { fill: #51c849; stroke: #111; stroke-width: 0.5; }
+      .face-b { fill: #f03f4c; stroke: #111; stroke-width: 0.5; }
+      .face-x { fill: #4e78f0; stroke: #111; stroke-width: 0.5; }
+      .face-y { fill: #f5dd32; stroke: #111; stroke-width: 0.5; }
+      .center { fill: #151515; stroke: #111; stroke-width: 0.8; }
+      .trigger { fill: #161616; stroke: #0e0e0e; stroke-width: 0.6; }
+      .detail { fill: none; stroke: #555; stroke-width: 0.8; opacity: 0.6; }
     </style>
   </defs>
 
-  <!-- Cuerpo del mando -->
-  <path class="body" d="M18,46 C15,25 28,22 38,22 H82 C92,22 105,25 102,46 C100,67 83,69 66,69 H54 C37,69 20,67 18,46 Z"/>
-  <path class="glow" d="M18,46 C15,25 28,22 38,22 H82 C92,22 105,25 102,46 C100,67 83,69 66,69 H54 C37,69 20,67 18,46 Z"/>
+  <!-- Base clásica Xbox -->
+  <path class="body" d="M20,45 C16,24 30,22 40,22 H100 C110,22 124,24 120,45 C116,66 100,68 84,69 H56 C40,68 24,66 20,45 Z"/>
+  <path class="shine" d="M22,45 C18,24 32,22 42,22 H98 C108,22 122,24 118,45 C114,66 98,68 82,69 H58 C42,68 26,66 22,45 Z"/>
 
-  <!-- Sticks analógicos -->
-  <g class="stick">
-    <circle cx="34" cy="35" r="9" />
-    <circle class="stick-center" cx="34" cy="35" r="4" />
+  <!-- Sticks -->
+  <g>
+    <circle class="stick-ring" cx="42" cy="36" r="8" />
+    <circle class="stick-center" cx="42" cy="36" r="4" />
   </g>
-  <g class="stick">
-    <circle cx="84" cy="35" r="9" />
-    <circle class="stick-center" cx="84" cy="35" r="4" />
+  <g>
+    <circle class="stick-ring" cx="95" cy="36" r="8" />
+    <circle class="stick-center" cx="95" cy="36" r="4" />
   </g>
 
-  <!-- D-pad -->
+  <!-- D-pad clásico -->
   <g class="dpad">
-    <rect x="14" y="33" width="6" height="14" rx="2" />
-    <rect x="11" y="39" width="12" height="6" rx="2" />
+    <rect x="16" y="34" width="5" height="14" rx="2" />
+    <rect x="12" y="39" width="14" height="5" rx="2" />
   </g>
 
-  <!-- Botones -->
-  <polygon points="76,18 81,26 86,18" class="triangle button" />
-  <circle cx="96" cy="22" r="5" class="circle button" />
-  <g class="button">
-    <rect x="72" y="24" width="8" height="3" rx="1" fill="#272727" />
-    <rect x="75" y="21" width="3" height="8" rx="1" fill="#272727" />
-  </g>
-  <rect x="90" y="24" width="7" height="7" rx="2" class="square button" />
+  <!-- Botones A/B/X/Y clásicos -->
+  <circle cx="98" cy="22" r="5" class="face-a" />
+  <circle cx="112" cy="30" r="5" class="face-b" />
+  <circle cx="84" cy="22" r="5" class="face-x" />
+  <circle cx="98" cy="14" r="5" class="face-y" />
 
-  <!-- Gatillos -->
-  <rect x="8" y="31" width="9" height="4" rx="2" class="trigger" />
-  <rect x="103" y="31" width="9" height="4" rx="2" class="trigger" />
+  <!-- Círculo central Xbox -->
+  <circle cx="68" cy="32" r="6" class="center" />
+  <circle cx="68" cy="32" r="2" fill="#8c8c8c" />
 
-  <!-- Detalles de luz -->
-  <path d="M30,28 C38,22 48,22 56,28" fill="none" stroke="#4f4f4f" stroke-width="1" opacity="0.6" />
-  <path d="M64,28 C72,22 82,22 90,28" fill="none" stroke="#4f4f4f" stroke-width="1" opacity="0.6" />
+  <!-- Gatillos clásicos -->
+  <rect x="10" y="32" width="10" height="4" rx="2" class="trigger" />
+  <rect x="119" y="32" width="10" height="4" rx="2" class="trigger" />
+
+  <!-- Sombras y detalles -->
+  <path class="detail" d="M28,26 C38,20 48,20 60,26" />
+  <path class="detail" d="M70,26 C82,20 94,20 106,26" />
 </svg>
