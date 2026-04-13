@@ -1,43 +1,62 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" width="32" height="32">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" width="32" height="32">
   <defs>
-    <linearGradient id="baseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#2a2a2a;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a2a2a" />
+      <stop offset="100%" stop-color="#111" />
     </linearGradient>
+    <radialGradient id="glow" cx="40%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
     <style>
-      .controller { fill: url(#baseGrad); stroke: #444; stroke-width: 1; }
-      .analog { fill: #555; stroke: #777; stroke-width: 1; }
-      .button { stroke: #000; stroke-width: 0.5; }
-      .triangle { fill: #00ff00; } /* △ */
-      .circle { fill: #ff4444; } /* ○ */
-      .cross { fill: #4444ff; } /* ✕ */
-      .square { fill: #ffff44; } /* □ */
-      .dpad { fill: #666; }
-      .trigger { fill: #333; }
+      .body { fill: url(#bodyGrad); stroke: #111; stroke-width: 0.8; }
+      .glow { fill: url(#glow); }
+      .stick { fill: #404040; stroke: #777; stroke-width: 0.8; }
+      .stick-center { fill: #111; }
+      .button { stroke: #111; stroke-width: 0.7; }
+      .triangle { fill: #3ee97c; }
+      .circle { fill: #ff596e; }
+      .cross { fill: #5d78ff; }
+      .square { fill: #ffdc52; }
+      .dpad { fill: #4a4a4a; }
+      .trigger { fill: #161616; stroke: #111; stroke-width: 0.6; }
     </style>
   </defs>
-  <!-- Base del controlador -->
-  <rect x="10" y="30" width="100" height="40" rx="15" class="controller"/>
+
+  <!-- Cuerpo del mando -->
+  <path class="body" d="M18,46 C15,25 28,22 38,22 H82 C92,22 105,25 102,46 C100,67 83,69 66,69 H54 C37,69 20,67 18,46 Z"/>
+  <path class="glow" d="M18,46 C15,25 28,22 38,22 H82 C92,22 105,25 102,46 C100,67 83,69 66,69 H54 C37,69 20,67 18,46 Z"/>
+
   <!-- Sticks analógicos -->
-  <circle cx="35" cy="25" r="10" class="analog"/>
-  <circle cx="85" cy="45" r="10" class="analog"/>
+  <g class="stick">
+    <circle cx="34" cy="35" r="9" />
+    <circle class="stick-center" cx="34" cy="35" r="4" />
+  </g>
+  <g class="stick">
+    <circle cx="84" cy="35" r="9" />
+    <circle class="stick-center" cx="84" cy="35" r="4" />
+  </g>
+
   <!-- D-pad -->
   <g class="dpad">
-    <rect x="15" y="40" width="8" height="8" rx="2"/>
-    <rect x="17" y="38" width="4" height="12" rx="2"/>
+    <rect x="14" y="33" width="6" height="14" rx="2" />
+    <rect x="11" y="39" width="12" height="6" rx="2" />
   </g>
+
   <!-- Botones -->
-  <polygon points="75,15 80,25 85,15" class="triangle button"/> <!-- △ -->
-  <circle cx="95" cy="20" r="5" class="circle button"/> <!-- ○ -->
-  <g class="cross button">
-    <rect x="70" y="25" width="8" height="3"/>
-    <rect x="73" y="22" width="3" height="8"/>
-  </g> <!-- ✕ -->
-  <rect x="90" y="25" width="8" height="8" rx="2" class="square button"/> <!-- □ -->
+  <polygon points="76,18 81,26 86,18" class="triangle button" />
+  <circle cx="96" cy="22" r="5" class="circle button" />
+  <g class="button">
+    <rect x="72" y="24" width="8" height="3" rx="1" fill="#272727" />
+    <rect x="75" y="21" width="3" height="8" rx="1" fill="#272727" />
+  </g>
+  <rect x="90" y="24" width="7" height="7" rx="2" class="square button" />
+
   <!-- Gatillos -->
-  <rect x="5" y="35" width="10" height="5" rx="2" class="trigger"/>
-  <rect x="105" y="35" width="10" height="5" rx="2" class="trigger"/>
-  <!-- Detalles adicionales -->
-  <circle cx="35" cy="25" r="3" fill="#888"/>
-  <circle cx="85" cy="45" r="3" fill="#888"/>
+  <rect x="8" y="31" width="9" height="4" rx="2" class="trigger" />
+  <rect x="103" y="31" width="9" height="4" rx="2" class="trigger" />
+
+  <!-- Detalles de luz -->
+  <path d="M30,28 C38,22 48,22 56,28" fill="none" stroke="#4f4f4f" stroke-width="1" opacity="0.6" />
+  <path d="M64,28 C72,22 82,22 90,28" fill="none" stroke="#4f4f4f" stroke-width="1" opacity="0.6" />
 </svg>
