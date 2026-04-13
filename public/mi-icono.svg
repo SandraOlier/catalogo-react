@@ -1,17 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="32" height="32">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" width="32" height="32">
   <defs>
+    <linearGradient id="baseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a2a2a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </linearGradient>
     <style>
-      .joystick { fill: #333; }
-      .stick { fill: #666; }
+      .controller { fill: url(#baseGrad); stroke: #444; stroke-width: 1; }
+      .analog { fill: #555; stroke: #777; stroke-width: 1; }
+      .button { stroke: #000; stroke-width: 0.5; }
+      .triangle { fill: #00ff00; } /* △ */
+      .circle { fill: #ff4444; } /* ○ */
+      .cross { fill: #4444ff; } /* ✕ */
+      .square { fill: #ffff44; } /* □ */
+      .dpad { fill: #666; }
+      .trigger { fill: #333; }
     </style>
   </defs>
-  <!-- Base del joystick -->
-  <rect x="35" y="60" width="30" height="20" rx="5" class="joystick"/>
-  <!-- Palo del joystick -->
-  <rect x="45" y="30" width="10" height="35" rx="5" class="stick"/>
-  <!-- Botón superior -->
-  <circle cx="50" cy="20" r="8" class="joystick"/>
-  <!-- Botones laterales -->
-  <circle cx="30" cy="50" r="4" class="joystick"/>
-  <circle cx="70" cy="50" r="4" class="joystick"/>
+  <!-- Base del controlador -->
+  <rect x="10" y="30" width="100" height="40" rx="15" class="controller"/>
+  <!-- Sticks analógicos -->
+  <circle cx="35" cy="25" r="10" class="analog"/>
+  <circle cx="85" cy="45" r="10" class="analog"/>
+  <!-- D-pad -->
+  <g class="dpad">
+    <rect x="15" y="40" width="8" height="8" rx="2"/>
+    <rect x="17" y="38" width="4" height="12" rx="2"/>
+  </g>
+  <!-- Botones -->
+  <polygon points="75,15 80,25 85,15" class="triangle button"/> <!-- △ -->
+  <circle cx="95" cy="20" r="5" class="circle button"/> <!-- ○ -->
+  <g class="cross button">
+    <rect x="70" y="25" width="8" height="3"/>
+    <rect x="73" y="22" width="3" height="8"/>
+  </g> <!-- ✕ -->
+  <rect x="90" y="25" width="8" height="8" rx="2" class="square button"/> <!-- □ -->
+  <!-- Gatillos -->
+  <rect x="5" y="35" width="10" height="5" rx="2" class="trigger"/>
+  <rect x="105" y="35" width="10" height="5" rx="2" class="trigger"/>
+  <!-- Detalles adicionales -->
+  <circle cx="35" cy="25" r="3" fill="#888"/>
+  <circle cx="85" cy="45" r="3" fill="#888"/>
 </svg>
