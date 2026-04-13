@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="32" height="32">
+  <defs>
+    <style>
+      .joystick { fill: #333; }
+      .stick { fill: #666; }
+    </style>
+  </defs>
+  <!-- Base del joystick -->
+  <rect x="35" y="60" width="30" height="20" rx="5" class="joystick"/>
+  <!-- Palo del joystick -->
+  <rect x="45" y="30" width="10" height="35" rx="5" class="stick"/>
+  <!-- Botón superior -->
+  <circle cx="50" cy="20" r="8" class="joystick"/>
+  <!-- Botones laterales -->
+  <circle cx="30" cy="50" r="4" class="joystick"/>
+  <circle cx="70" cy="50" r="4" class="joystick"/>
+</svg>
